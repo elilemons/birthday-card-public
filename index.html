@@ -22,7 +22,6 @@
   <div id="particles-js"></div>
   <div id="app"
        class="slide-viewer">
-    <div v-if="!showPresents">
       <transition name="slides"
                   v-if="!showPresents"
                   leave-class="animated fadeOut"
@@ -36,7 +35,6 @@
                :text="slide.text">
         </slide>
       </transition>
-    </div>
     <div v-if="showPresents">
       <transition name="presentssss"
                   leave-class="animated bounceOut"
