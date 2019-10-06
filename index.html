@@ -19,10 +19,9 @@
 </head>
 
 <body>
-  <div id="particles-js"></div>
-  <div id="app"
-       class="slide-viewer">
-    <div v-if="!showPresents">
+  <!-- <div id="particles-js"></div> -->
+  <div id="app">
+    <div class="slide-viewer">
       <transition name="slides"
                   v-if="!showPresents"
                   leave-class="animated fadeOut"
@@ -36,26 +35,27 @@
                :text="slide.text">
         </slide>
       </transition>
-    </div>
-    <div v-if="showPresents">
-      <transition name="presentssss"
-                  leave-class="animated bounceOut"
-                  leave-active-class="animated rubberBand"
-                  enter-active-class="animated bounceIn">
-        <present  v-if="currentPresent == present.id"
-                  v-for="present in presents"
-                  v-bind:key="present.id"
-                  class="slide"
-                  :text="present.text">
-        </present>
-      </transition>
-    </div>
-    <div v-if="showPresents && currentPresent === presents.length - 1" class="presents-all">
+      <div v-if="showPresents">
+        <transition name="presentssss"
+                    leave-class="animated bounceOut"
+                    leave-active-class="animated rubberBand"
+                    enter-active-class="animated bounceIn">
+          <present v-if="currentPresent == present.id"
+                   v-for="present in presents"
+                   v-bind:key="present.id"
+                   class="slide"
+                   :text="present.text">
+          </present>
+        </transition>
+      </div>
+      <div v-if="showPresents && currentPresent === presents.length - 1"
+           class="presents-all">
         <present v-for="present in presents"
                  v-bind:key="present.id"
                  class="animated tada"
                  :text="present.text">
         </present>
+      </div>
     </div>
     <div class="controls">
       <div class="control"
