@@ -4,7 +4,7 @@ let Slide = Vue.component('slide', {
     text: String
   },
   template: `
-    <div>
+    <div class="gold">
       {{ text }}
     </div>
   `

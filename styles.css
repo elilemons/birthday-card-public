@@ -70,11 +70,6 @@ ul>li {
   -webkit-text-fill-color: transparent;
 }
 
-.next-slide-toggle,
-.show-presents-toggle {
-  position: absolute;
-  z-index: 100;
-}
 
 /* Debugging, play controls */
 .controls {
@@ -113,5 +108,4 @@ ul>li {
 .presents-all {
   font-size: 2rem;
   width: 80vw;
-  padding: 1rem;
 }
