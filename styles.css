@@ -61,14 +61,8 @@ ul>li {
   text-align: center;
   min-width: 100%;
   width: 100%;
+  margin-top: -50px;
 }
-
-.gold {
-  background: linear-gradient(90deg, #fcff9e 0%, #bda574 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 
 /* Debugging, play controls */
 .controls {
