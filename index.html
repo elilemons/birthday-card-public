@@ -22,19 +22,21 @@
   <div id="particles-js"></div>
   <div id="app"
        class="slide-viewer">
-    <transition name="slides"
-                v-if="!showPresents"
-                leave-class="animated fadeOut"
-                leave-active-class="animated fadeOutLeft"
-                enter-active-class="animated fadeInLeft">
-      <slide v-if="currentSlide === slide.id && currentSlide !== slides.length - 1"
-             v-for="slide in slides"
-             v-bind:key="slide.id"
-             class="slide"
-             :id="slide.id"
-             :text="slide.text">
-      </slide>
-    </transition>
+    <div v-if="!showPresents">
+      <transition name="slides"
+                  v-if="!showPresents"
+                  leave-class="animated fadeOut"
+                  leave-active-class="animated fadeOutLeft"
+                  enter-active-class="animated fadeInLeft">
+        <slide v-if="currentSlide === slide.id && currentSlide !== slides.length - 1"
+               v-for="slide in slides"
+               v-bind:key="slide.id"
+               class="slide"
+               :id="slide.id"
+               :text="slide.text">
+        </slide>
+      </transition>
+    </div>
     <div v-if="showPresents">
       <transition name="presentssss"
                   leave-class="animated bounceOut"
