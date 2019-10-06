@@ -1,0 +1,117 @@
+/* @import '/assets/lib/particle.css'; */
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: #780206;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #061161, #780206);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061161, #780206);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  overflow: hidden;
+  font-family: 'Poiret One';
+  font-size: 3rem;
+  color: white;
+}
+
+/* ---- reset ---- */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul>li {
+  list-style: none;
+}
+
+/* Slides */
+.slide-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 100%;
+  width: 100%;
+}
+
+.gold {
+  background: linear-gradient(90deg, #fcff9e 0%, #bda574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.next-slide-toggle,
+.show-presents-toggle {
+  position: absolute;
+  z-index: 100;
+}
+
+/* Debugging, play controls */
+.controls {
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: .85rem;
+  font-family: monospace;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, .35);
+}
+
+.control {
+  background: rgba(255, 255, 255, .35);
+  height: 50px;
+  width: 50px;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.control:hover {
+  background: rgb(255, 255, 255);
+}
+
+.presents-all {
+  font-size: 2rem;
+  width: 80vw;
+  padding: 1rem;
+}

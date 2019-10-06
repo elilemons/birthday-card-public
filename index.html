@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet"
+        href="styles.css">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/assets/favicon/favicon-32x32.png">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div id="app"
+       class="slide-viewer">
+    <transition name="slides"
+                v-if="!showPresents"
+                leave-class="animated fadeOut"
+                leave-active-class="animated fadeOutLeft"
+                enter-active-class="animated fadeInLeft">
+      <slide v-if="currentSlide === slide.id && currentSlide !== slides.length - 1"
+             v-for="slide in slides"
+             v-bind:key="slide.id"
+             class="slide"
+             :id="slide.id"
+             :text="slide.text">
+      </slide>
+    </transition>
+    <div v-if="showPresents">
+      <transition name="presentssss"
+                  leave-class="animated bounceOut"
+                  leave-active-class="animated rubberBand"
+                  enter-active-class="animated bounceIn">
+        <present  v-if="currentPresent == present.id"
+                  v-for="present in presents"
+                  v-bind:key="present.id"
+                  class="slide"
+                  :text="present.text">
+        </present>
+      </transition>
+    </div>
+    <div v-if="showPresents && currentPresent === presents.length - 1" class="presents-all">
+        <present v-for="present in presents"
+                 v-bind:key="present.id"
+                 class="animated tada"
+                 :text="present.text">
+        </present>
+    </div>
+    <div class="controls">
+      <div class="control"
+           @click="start">
+        <div class="start">
+          &laquo;
+        </div>
+      </div>
+      <div class="control"
+           @click="prev">
+        <div class="prev">
+          &lsaquo;
+        </div>
+      </div>
+      <div class="control"
+           @click="next">
+        <div class="next">
+          &rsaquo;
+        </div>
+      </div>
+
+      <div class="control end"
+           @click="end">
+        <div class="end">
+          &raquo;
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- particles.js container -->
+
+  <!-- Debugging stuff -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="assets/lib/particles.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
